@@ -68,10 +68,13 @@ body {
 
 /* 卡片样式 */
 .card {
-  background: var(--card-bg);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: var(--shadow);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
   transition: var(--transition);
   cursor: pointer;
   text-decoration: none;
@@ -89,8 +92,8 @@ body {
   bottom: 0;
   background: linear-gradient(
     135deg,
-    var(--primary-color),
-    var(--secondary-color)
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05)
   );
   opacity: 0;
   transition: var(--transition);
@@ -99,12 +102,14 @@ body {
 
 /* 悬停效果 */
 .card:hover {
-  transform: translateY(-15px);
-  box-shadow: var(--shadow-hover);
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 12px 48px 0 rgba(31, 38, 135, 0.35);
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .card:hover::before {
-  opacity: 0.1;
+  opacity: 1;
 }
 
 /* 卡片图片容器 */
@@ -112,7 +117,7 @@ body {
   width: 100%;
   height: 280px;
   overflow: hidden;
-  background: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 100%);
+  background: rgba(255, 255, 255, 0.1);
   position: relative;
 }
 
@@ -143,7 +148,9 @@ body {
 .card-title {
   padding: 25px;
   text-align: center;
-  background: white;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   position: relative;
   z-index: 2;
 }
@@ -151,12 +158,15 @@ body {
 .card-title h3 {
   font-size: 1.4rem;
   font-weight: 600;
-  color: var(--text-color);
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: var(--transition);
 }
 
 .card:hover .card-title h3 {
-  color: var(--primary-color);
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
 }
 
 /* 页脚 */
